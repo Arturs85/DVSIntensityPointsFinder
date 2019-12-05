@@ -10,7 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    static Canvas canvas = new Canvas(FrequencyMapFinder.width, FrequencyMapFinder.height);
+    static Canvas canvas = new Canvas(FrequencyMapFinder.width*FrequencyMapFinder.maxScale, FrequencyMapFinder.height*FrequencyMapFinder.maxScale);
 
     @Override
     public void start(Stage primaryStage) throws Exception{

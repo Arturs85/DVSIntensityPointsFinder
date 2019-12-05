@@ -12,6 +12,9 @@ import java.io.IOException;
 public class FrequencyMapFinder {
     static int width = 240;
     static int height = 180;
+    static  int maxScale = 4;
+    int scale = 4;
+
     long[][] frequencyMap = new long[width][height];
     byte[][] normalizedMap = new byte[width][height];
 long maxSoFar =0;
@@ -73,8 +76,8 @@ long maxSoFar =0;
       GraphicsContext g=   canvas.getGraphicsContext2D();
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-g.setStroke(Color.hsb(1,0,normalizedMap[i][j]/127f));
-                g.strokeLine(i,j,i,j);
+g.setFill(Color.hsb(1,0,normalizedMap[i][j]/127f));
+                g.fillRect(i*scale,j*scale,scale,scale);
             }
         }
     }
