@@ -17,7 +17,7 @@ public class Main extends Application {
         ScrollPane scrollPane = new ScrollPane(canvas);
         BorderPane root = new BorderPane(scrollPane);
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 900, 800));
        primaryStage.show();
     FrequencyMapFinder frequencyMapFinder = new FrequencyMapFinder();
     frequencyMapFinder.openFile("/home/arturs/Downloads/DVS LEDs/2019-11-21_16-42-50.rawdvs.aedat");
