@@ -42,8 +42,8 @@ long maxSoFar =0;
                 // System.out.println();
                 int time = (((int) arr[4]) << 24) | ((((int) arr[5]) << 16) & 0x00FF0000) | ((((int) arr[6]) << 8) & 0x0000ff00) | (((int) arr[7]) & 0x000000ff);
                 //   int time =(((int)arr[4])<<24)|(((int)arr[5])<<16)|(((int)arr[6])<<8)|((int)arr[7]);
-                int y = ( (arr[0] & 0x0000007f )<<2)|  (((arr[1]) >> 6) & 0x00000003);
-                int x = (( (arr[1] & 0x00000003f)) << 4) |  (((arr[2]) >> 4) & 0x0000000f);
+                int y = (((int) (arr[0] & 0b01111111)) << 2) | (int) (((arr[1]) >> 6) & 0x0000003f);
+                int x = (((int) (arr[1] & 0b00111111)) << 4) | (int) (((arr[2]) >> 4) & 0x0000000f);
                if(x>0&&x<width&&y>0&&y<height) {
                    frequencyMap[x][y]++;
                    //System.out.println(time + "  y:" + y + "  x:" + x);
@@ -77,7 +77,7 @@ long maxSoFar =0;
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
 g.setFill(Color.hsb(1,0,normalizedMap[i][j]/127f));
-                g.fillRect((width-i)*scale,(height-j)*scale,scale,scale);
+                g.fillRect(i*scale,j*scale,scale,scale);
             }
         }
     }

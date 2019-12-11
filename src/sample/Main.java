@@ -20,7 +20,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 800));
        primaryStage.show();
     FrequencyMapFinder frequencyMapFinder = new FrequencyMapFinder();
-    frequencyMapFinder.openFile("/home/arturs/Downloads/DVS LEDs/2019-11-21_16-42-50.rawdvs.aedat");
+    frequencyMapFinder.openFile("/home/vnpc/Downloads/DVS LEDs/2019-11-21_16-42-50.rawdvs.aedat");
     frequencyMapFinder.normalize((byte)127);
     frequencyMapFinder.draw(canvas);
     }
